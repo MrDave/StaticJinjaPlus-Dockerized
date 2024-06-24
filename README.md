@@ -103,7 +103,7 @@ docker build -f Dockerfile.slim --build-args SJP_TAG="0.1.0"  # python:3.12-slim
 
 ## Pulling images
 
-To chek for image updates and/or to download the latest image release use `docker pull`:
+To check for image updates and/or to download the latest image release use `docker pull`:
 ```sh
 docker pull mrdave95/static-jinja-plus:latest  # or other tag
 ```
