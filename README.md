@@ -100,3 +100,28 @@ docker build -f Dockerfile.slim .  # python:3.12-slim image, main brach
 docker build --build-args SJP_TAG="0.1.1" .  # ubuntu image, release tag "0.1.1"
 docker build -f Dockerfile.slim --build-args SJP_TAG="0.1.0"  # python:3.12-slim image, release tag "0.1.0"
 ```
+
+## Pulling images
+
+To chek for image updates and/or to download the latest image release use `docker pull`:
+```sh
+docker pull mrdave95/static-jinja-plus:latest  # or other tag
+```
+
+Example results:
+
+```
+$ docker pull mrdave95/static-jinja-plus  # local image is up to date
+Using default tag: latest
+latest: Pulling from mrdave95/static-jinja-plus
+Digest: sha256:9a3cc7272decd44b0c3c4ec47b65835fd397e77277bc661a04cdbd28f873282b
+Status: Image is up to date for mrdave95/static-jinja-plus:latest
+docker.io/mrdave95/static-jinja-plus:latest
+
+$ docker pull mrdave95/static-jinja-plus  # local image was not up to date 
+Using default tag: latest
+latest: Pulling from mrdave95/static-jinja-plus
+Digest: sha256:9a3cc7272decd44b0c3c4ec47b65835fd397e77277bc661a04cdbd28f873282b
+Status: Downloaded newer image for mrdave95/static-jinja-plus:latest
+docker.io/library/mrdave95/static-jinja-plus:latest
+```
