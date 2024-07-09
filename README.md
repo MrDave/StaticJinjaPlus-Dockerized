@@ -92,13 +92,10 @@ docker run -v "$(pwd)":/opt/StaticJinjaPlus/src --name sjplus --rm mrdave95/stat
 
 ## Building custom images
 
-Two Dockerfiles (`Dockerfile` and `Dockerfile.slim`) can be used to build images based on `ubuntu` and `python:3.12-slim` images respectively. Both support buiild argument `SJP_TAG` for StaticJinjaPlus's repository branches or tags. If built without using build arguments, the image will pull from the main branch of StaticJinjaPlus (as in `latest`).
+For each version of the image there is a respective Dockerfile (e.g. `/latest/ubuntu/Dockerfile` for `latest-ubuntu` image or `/0.1.1/python-slim/Dockerfile` for `0.1.1-slim`). To build an image from any of those run `docker build` from respective folder or specify a Dockerfile if run from elsewhere:
 
 ```sh
-docker build .  # ubuntu image, main brach
-docker build -f Dockerfile.slim .  # python:3.12-slim image, main brach
-docker build --build-args SJP_TAG="0.1.1" .  # ubuntu image, release tag "0.1.1"
-docker build -f Dockerfile.slim --build-args SJP_TAG="0.1.0"  # python:3.12-slim image, release tag "0.1.0"
+docker build -f latest/python-slim/Dockerfile .
 ```
 
 ## Pulling images

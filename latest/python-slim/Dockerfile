@@ -1,6 +1,5 @@
 FROM python:3.12-slim
-ARG SJP_TAG="main"
-ADD https://github.com/MrDave/StaticJinjaPlus.git#${SJP_TAG} /opt/StaticJinjaPlus
+ADD https://github.com/MrDave/StaticJinjaPlus.git /opt/StaticJinjaPlus
 
 WORKDIR /opt/StaticJinjaPlus
 
